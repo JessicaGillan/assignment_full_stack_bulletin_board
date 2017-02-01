@@ -16,7 +16,7 @@
 // Bower packages
 //= require lodash/lodash
 //= require angular/angular
+//= require ui-router/angular-ui-router
 //= require restangular/restangular
-//= require ui-router/ui-router
 
 //= require_tree .

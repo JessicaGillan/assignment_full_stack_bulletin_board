@@ -1,0 +1,13 @@
+<%= content_for(:angular_app) do %>
+  ng-app="bb"
+<% end %>
+
+<div class="col-sm-4">
+  <div ui-view="side-bar">
+  </div>
+</div>
+
+<div class="col-sm-8">
+  <div ui-view="main-content">
+  </div>
+</div>
