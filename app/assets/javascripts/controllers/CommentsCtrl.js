@@ -5,6 +5,6 @@ function ($scope, Restangular) {
     function(comments) {
       $scope.comments = comments;
     }
-  )
+  );
 
 }]);

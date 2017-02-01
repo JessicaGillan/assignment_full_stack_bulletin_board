@@ -19,7 +19,7 @@ bb.config(
       // Restangular
       RestangularProvider.setBaseUrl('/api/v1');
       RestangularProvider.setRequestSuffix('.json');
-      RestangularProvider.setDefaultHttpFields({ "content-type": 'application/json' })
+      RestangularProvider.setDefaultHttpFields({ "content-type": 'application/json' });
 
       // routing
       $urlRouterProvider.otherwise('/posts');

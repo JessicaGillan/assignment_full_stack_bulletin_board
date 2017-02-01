@@ -10,11 +10,23 @@ N = 10
 puts "Cleaning database"
 
 Post.destroy_all
+Comment.destroy_all
 
+puts "Creating posts"
 N.times do
   Post.create({
     title: Faker::ChuckNorris.fact,
     body: Faker::Hipster.paragraph,
     author: Faker::Name.first_name
   })
+end
+
+puts "Creating comments for each post"
+Post.all.each do |post|
+  3.times do
+    post.comments.create({
+      author: Faker::Name.first_name,
+      body: Faker::Hipster.paragraph
+      })
+  end
 end
