@@ -1,0 +1,4 @@
+<div ng-repeat="post in posts">
+  <h3><a ui-sref="main.postsshow({ id: post.id })">{{ post.title }}</a></h3>
+  <p>Submitted by {{ post.author }}, on {{ post.created_at | date }}</p>
+</div>

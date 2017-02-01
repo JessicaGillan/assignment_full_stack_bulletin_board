@@ -17,8 +17,9 @@ bb.config(
         .common['X-CSRF-Token'] = token;
 
       // Restangular
-      // RestangularProvider.setBaseUrl('/api/v1');
-      // RestangularProvider.setRequestSuffix('.json');
+      RestangularProvider.setBaseUrl('/api/v1');
+      RestangularProvider.setRequestSuffix('.json');
+      RestangularProvider.setDefaultHttpFields({ "content-type": 'application/json' })
 
       // routing
       $urlRouterProvider.otherwise('/posts');
@@ -29,7 +30,8 @@ bb.config(
           abstract: true,
           views: {
             'side-bar@': {
-              template: '<div>sidebar</div>'
+              templateUrl: 'templates/comments/index.html',
+              controller: 'CommentsCtrl'
             }
           }
         })
@@ -37,12 +39,19 @@ bb.config(
           url: 'posts',
           views: {
             'main-content@': {
-              template: '<div>main content</div>'
+              templateUrl: 'templates/posts/index.html',
+              controller: 'PostsCtrl'
             }
           }
         })
         .state('main.postsshow', {
-          url: 'posts/:id'
+          url: 'posts/:id',
+          views: {
+            'main-content@': {
+              templateUrl: 'templates/posts/show.html',
+              controller: 'PostsShowCtrl'
+            }
+          }
         });
     }
   ]
