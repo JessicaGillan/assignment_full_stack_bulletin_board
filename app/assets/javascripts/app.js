@@ -42,6 +42,9 @@ bb.config(
               templateUrl: 'templates/posts/index.html',
               controller: 'PostsCtrl'
             }
+          },
+          resolve: {
+            posts: function(postService) { return postService.all() }
           }
         })
         .state('main.postsshow', {

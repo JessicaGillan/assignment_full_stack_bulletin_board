@@ -15,4 +15,18 @@ class PostsController < ApplicationController
       format.json { render json: @post }
     end
   end
+
+  def create
+    @post = Post.create(post_params)
+
+    respond_to do |format|
+      format.json { render json: @post }
+    end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body, :author)
+  end
 end
